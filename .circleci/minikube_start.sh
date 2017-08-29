@@ -20,8 +20,8 @@ do
   sleep 2
 done
 
-helm init
+./kubectl apply -f deployments/nginx.yaml
 
-./.circleci/wait_for_deployment.sh kube-system tiller-deploy
+./circleci/wait_for_deployment.sh default nginx
 
 ./minikube status
