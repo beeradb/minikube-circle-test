@@ -1,0 +1,26 @@
+version: 2
+jobs:
+  # 'build' is the default build, the only one triggered automatically by github or anything else.
+  build:
+    machine: true
+    environment:
+        GOPATH: /home/circleci/go
+        MINIKUBE_WANTUPDATENOTIFICATION: false
+        MINIKUBE_WANTREPORTERRORPROMPT: false
+        MINIKUBE_HOME: /home/circleci
+        CHANGE_MINIKUBE_NONE_USER: true
+        KUBECONFIG: /home/circleci/.kube/config
+    steps:
+        - checkout
+
+        - run:
+            command: ./.circleci/circle_vm_setup.sh
+            name: NORMAL Circle VM setup - tools, docker, golang, minikube
+
+        - run:
+            command: ./.circleci/minikube_start.sh
+            name: start minikube
+
+        - run:
+            command: ./.circleci/minikube_status_check.sh
+            name: check status
