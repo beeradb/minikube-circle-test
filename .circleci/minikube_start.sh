@@ -20,4 +20,4 @@ do
   sleep 2
 done
 
-minikube status
+./minikube status
