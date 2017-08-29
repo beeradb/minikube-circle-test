@@ -22,6 +22,6 @@ done
 
 ./kubectl apply -f deployments/nginx.yaml
 
-./circleci/wait_for_deployment.sh default nginx-deployment
+./.circleci/wait_for_deployment.sh default nginx-deployment
 
 ./minikube status
