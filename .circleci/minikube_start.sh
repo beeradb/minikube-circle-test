@@ -20,4 +20,6 @@ do
   sleep 2
 done
 
+helm init
+
 ./minikube status
