@@ -22,4 +22,6 @@ done
 
 helm init
 
+./.circleci/wait_for_deployment.sh kube-system tiller-deploy
+
 ./minikube status
