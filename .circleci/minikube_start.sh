@@ -7,6 +7,8 @@ curl -Lo kubectl https://storage.googleapis.com/kubernetes-release/release/$(cur
 mkdir $HOME/.kube || true
 touch $HOME/.kube/config
 
+./minikube config set WantKubectlDownloadMsg false
+
 sudo -E ./minikube start --vm-driver=none
 
 # this for loop waits until kubectl can access the api server that minikube has created
@@ -25,3 +27,8 @@ done
 ./.circleci/wait_for_deployment.sh default nginx-deployment
 
 ./minikube status
+
+sleep 120
+
+./minikube status
+./kubectl get po --all-namespaces
