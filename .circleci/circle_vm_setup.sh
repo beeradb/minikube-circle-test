@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -o errexit
 
-export MINIKUBE_VERSION=0.21.0
+export MINIKUBE_VERSION=0.22.1
 export KUBECTL_VERSION=1.7.4
 export HELM_VERSION=2.5.1
 
