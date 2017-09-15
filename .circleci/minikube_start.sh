@@ -33,6 +33,6 @@ sleep 120
 ./minikube status
 ./kubectl get po --all-namespaces
 
+
+echo "searching for localkube process"
 ps -aux | grep -i localkube
-docker ps -a
-cat ~/.minikube/profiles/minikube/config.json
