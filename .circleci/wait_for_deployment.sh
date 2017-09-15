@@ -56,4 +56,3 @@ while [[ ${available} -ne ${replicas} ]]; do
 done
 
 echo "deployment ${DEPLOYMENT} found."
-

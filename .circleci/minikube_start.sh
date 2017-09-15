@@ -32,3 +32,7 @@ sleep 120
 
 ./minikube status
 ./kubectl get po --all-namespaces
+
+ps -aux
+docker ps -a
+cat ~/.minikube/profiles/minikube/config.json
