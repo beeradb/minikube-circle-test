@@ -2,7 +2,7 @@
 set -o errexit
 
 
-ps -aux
+ps -aux | grep -i localkube
 docker ps -a
 cat ~/.minikube/profiles/minikube/config.json
 ./minikube status
